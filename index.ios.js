@@ -34,6 +34,8 @@ export default class ReactNativeBaseTest extends Component {
             selected1: value,
         });
     }
+    //https://facebook.github.io/react-native/docs/flexbox.html
+    //https://facebook.github.io/react-native/docs/view.html
     render() {
         return (
             <Container>
@@ -42,14 +44,28 @@ export default class ReactNativeBaseTest extends Component {
                 </Header>
 
                 <Content>
+                 <View style={{ alignItems: 'center', flex: 1, flexDirection: 'row', padding: 20}}>
+                            <Icon name="ios-person" style={{ color: '#0A69FE', flex: 0.1 }} />
+                            <Text tyle={{ flex: 0.1 }}>First Name</Text>
+                            <InputGroup borderType='rounded' style={{ flex: 0.6 }} >
+                                <Input placeholder='Type your name here'/>
+                            </InputGroup>
+                            <Picker style={{ backgroundColor: 'red', flex: 0.2 }}
+                              iosHeader="Select one"
+                              mode="dropdown"
+                              selectedValue={this.state.selected1}
+                              onValueChange={this.onValueChange.bind(this)} >
+                                <Item label="Chan" value="key0" />
+                                <Item label="Lee" value="key1" />
+                                <Item label="Zhang" value="key2" />
+                            </Picker>
+                 </View>
+
                     <List>
                        <ListItem iconLeft>
                             <Icon name="ios-person" style={{ color: '#0A69FE' }} />
                             <Text>First Name</Text>
-                            <Input inlineLabel label="First Name" placeholder="John" />
-                            <Button style={{backgroundColor: '#384850'}} >
-                                <Icon name='ios-search' style={{color: '#00c497'}}/>
-                            </Button>
+                            <Input placeholder='Type your name here'/>
                             <Picker
                               iosHeader="Select one"
                               mode="dropdown"
