@@ -5,7 +5,7 @@
  */
 import { ReactNativePropRegistry } from 'react-native';
 import React, { Component } from 'react';
-import { Container, Content, Badge } from 'native-base';
+import { Container, Content, Badge, Header, Title, Footer, FooterTab, Button,Text, Icon } from 'native-base';
 import {
   AppRegistry,
   StyleSheet,
@@ -16,6 +16,9 @@ export default class ReactNativeBaseTest extends Component {
     render() {
         return (
             <Container>
+            <Header>
+                <Title>Test Header</Title>
+            </Header>
                 <Content>
                     <Badge>2</Badge>
                     <Badge primary>2</Badge>
@@ -29,6 +32,16 @@ export default class ReactNativeBaseTest extends Component {
                         1866
                     </Badge>
                 </Content>
+                <Footer>
+                    <FooterTab>
+                        <Button transparent>
+                            <Icon name='ios-call' />
+                        </Button>
+                        <Button transparent>
+                            <Icon name='ios-call' />
+                        </Button>
+                    </FooterTab>
+                </Footer>
             </Container>
         );
     }
