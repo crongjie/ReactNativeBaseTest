@@ -11,38 +11,49 @@ import {
   StyleSheet,
   View
 } from 'react-native';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+
+let reducers = function(){
+    return {}
+}
+
+let store = createStore(reducers)
+
 
 export default class ReactNativeBaseTest extends Component {
     render() {
         return (
-            <Container>
-            <Header>
-                <Title>Test Header</Title>
-            </Header>
-                <Content>
-                    <Badge>2</Badge>
-                    <Badge primary>2</Badge>
-                    <Badge success>2</Badge>
-                    <Badge info>2</Badge>
-                    <Badge warning>2</Badge>
-                    <Badge danger>2</Badge>
-                    <Badge
-                      style={{ backgroundColor: 'black' }}
-                      textStyle={{ color: 'white' }}>
-                        1866
-                    </Badge>
-                </Content>
-                <Footer>
-                    <FooterTab>
-                        <Button transparent>
-                            <Icon name='ios-call' />
-                        </Button>
-                        <Button transparent>
-                            <Icon name='ios-call' />
-                        </Button>
-                    </FooterTab>
-                </Footer>
-            </Container>
+            <Provider store={store}>
+                <Container>
+                    <Header>
+                        <Title>Test Header</Title>
+                    </Header>
+                        <Content>
+                            <Badge>2</Badge>
+                            <Badge primary>2</Badge>
+                            <Badge success>2</Badge>
+                            <Badge info>2</Badge>
+                            <Badge warning>2</Badge>
+                            <Badge danger>2</Badge>
+                            <Badge
+                            style={{ backgroundColor: 'black' }}
+                            textStyle={{ color: 'white' }}>
+                                1866
+                            </Badge>
+                        </Content>
+                        <Footer>
+                            <FooterTab>
+                                <Button transparent>
+                                    <Icon name='ios-call' />
+                                </Button>
+                                <Button transparent>
+                                    <Icon name='ios-call' />
+                                </Button>
+                            </FooterTab>
+                        </Footer>
+                </Container>
+            </Provider>
         );
     }
 }
