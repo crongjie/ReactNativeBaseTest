@@ -13,46 +13,19 @@ import {
 } from 'react-native';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
+import {Scene, Router} from 'react-native-router-flux';
 
-let reducers = function(){
-    return {}
-}
 
-let store = createStore(reducers)
+import reducers from './src/reducers'
 
+const store = createStore(reducers);
+import Test from './src/components/test'
 
 export default class ReactNativeBaseTest extends Component {
     render() {
         return (
             <Provider store={store}>
-                <Container>
-                    <Header>
-                        <Title>Test Header</Title>
-                    </Header>
-                        <Content>
-                            <Badge>2</Badge>
-                            <Badge primary>2</Badge>
-                            <Badge success>2</Badge>
-                            <Badge info>2</Badge>
-                            <Badge warning>2</Badge>
-                            <Badge danger>2</Badge>
-                            <Badge
-                            style={{ backgroundColor: 'black' }}
-                            textStyle={{ color: 'white' }}>
-                                1866
-                            </Badge>
-                        </Content>
-                        <Footer>
-                            <FooterTab>
-                                <Button transparent>
-                                    <Icon name='ios-call' />
-                                </Button>
-                                <Button transparent>
-                                    <Icon name='ios-call' />
-                                </Button>
-                            </FooterTab>
-                        </Footer>
-                </Container>
+                <Test />
             </Provider>
         );
     }
